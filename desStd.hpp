@@ -146,8 +146,8 @@ std::vector<std::string> roundKeys(std::string key, int n){
 
     std::vector<std::string> rk;
     for(int i=0;i<n;i++){
-        left = shiftLeft(left, shift_table[i]);
-        right = shiftLeft(right, shift_table[i]);
+        left = shiftLeft(left, shift_table[i%16]);
+        right = shiftLeft(right, shift_table[i%16]);
 
         std::string combined = left+right;
         
